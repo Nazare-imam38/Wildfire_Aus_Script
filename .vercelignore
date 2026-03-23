@@ -1,0 +1,10 @@
+# Keep serverless installs slim: full stack is in requirements.txt (rasterio, etc.).
+requirements.txt
+requirements-ui.txt
+.venv
+venv
+outputs
+.env
+*.tif
+*.tiff
+*.gpkg

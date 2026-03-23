@@ -42,6 +42,12 @@ Or: `.\run_dashboard.ps1` (installs UI deps then starts Streamlit).
 
 CLI help: `python -m ignis_twin --help`
 
+## Vercel
+
+This repo includes **`app.py`** (FastAPI ASGI `app`) so Vercel’s Python runtime finds an entrypoint. **`vercel.json`** installs only **`requirements-vercel.txt`** (FastAPI). The full **`requirements.txt`** is listed in **`.vercelignore`** so serverless builds do not pull `rasterio` / stackstac / etc., which are not viable on Vercel functions.
+
+The **Streamlit dashboard** does not run on Vercel; use it locally or host the UI on [Streamlit Community Cloud](https://streamlit.io/cloud), Docker, Railway, etc.
+
 ## Outputs
 
 Generated under `outputs/` (gitignored): hotspots CSV, perimeter GeoJSON, wind JSON, optional rasters. The dashboard expects those paths under `outputs/phase2` and `outputs/phase3`.

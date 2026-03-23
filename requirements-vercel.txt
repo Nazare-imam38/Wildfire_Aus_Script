@@ -1,0 +1,2 @@
+# Minimal deps for Vercel serverless (see app.py). Do not use for local pipeline / Streamlit.
+fastapi>=0.115.0
