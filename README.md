@@ -2,6 +2,8 @@
 
 Brief pipeline + dashboard: **NASA FIRMS** hotspots, fire perimeter, **Open-Meteo** wind; optional Sentinel / SAR steps. Study area: East Gippsland (see `ignis_twin/config.py`).
 
+STAR-style narrative (situation, task, implementation, outcomes): **[PROJECT_DESCRIPTION.md](PROJECT_DESCRIPTION.md)**.
+
 ## Prerequisites
 
 - **Python 3.12** (recommended) or standard **3.13** (GIL build). Avoid **free-threaded 3.13** for the UI—`streamlit`/`pandas` need wheels (see `requirements-ui.txt` notes).
