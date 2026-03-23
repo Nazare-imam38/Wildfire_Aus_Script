@@ -1,0 +1,25 @@
+# Visualization dashboard (Streamlit + Folium).
+#
+# --- Windows + Python 3.13 "free-threaded" (cp313t) ---
+# Streamlit pins pandas<3. Pandas 2.x has NO pre-built wheels for cp313t, so pip
+# downloads the source tarball and tries to compile with Meson → needs Visual Studio
+# (vswhere.exe). That is why you saw: "Could not find ... vswhere.exe".
+#
+# Fix (pick one):
+#   A) Recreate .venv with GIL Python (NOT 3.13t). From project root:
+#        .\setup_venv.ps1
+#        .\.venv\Scripts\python.exe -m pip install -r requirements-ui.txt
+#      Or manually: "C:\Program Files\Python313\python.exe" -m venv .venv
+#   B) Use Python 3.12: py -3.12 -m venv .venv
+#   C) Install "Build Tools for Visual Studio" with C++ (only if you must compile pandas).
+#
+# --- Install ---
+#   .\.venv\Scripts\python.exe -m pip install -r requirements-ui.txt
+#   .\.venv\Scripts\python.exe -m streamlit run dashboard.py
+
+# Install pandas first so pip picks a wheel for your interpreter (GIL build only).
+pandas>=2.2.0,<3
+streamlit>=1.28.0
+folium>=0.15.0
+streamlit-folium>=0.18.0
+branca>=0.7.0
